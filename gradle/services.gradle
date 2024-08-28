@@ -6,14 +6,14 @@ if (project.tasks.findByName('systemdRepackage')) {
 } else if(project.hasProperty("serviceTemplateGit")) {
     apply from: "${serviceTemplateGit}/gradle/systemd.gradle"
 } else {
-    apply from: "https://raw.githubusercontent.com/xiaoyao9184/spring-boot-service-gradle-plugin/master/gradle/systemd.gradle"
+    apply from: "https://raw.githubusercontent.com/theevangelista/spring-boot-service-gradle-plugin/master/gradle/systemd.gradle"
 }
 if (project.tasks.findByName('winswRepackage')) {
     println("Task 'winswRepackage' already exist there is no need to apply from the github.")
 } else if(project.hasProperty("serviceTemplateGit")) {
     apply from: "${serviceTemplateGit}/gradle/winsw.gradle"
 } else {
-    apply from: "https://raw.githubusercontent.com/xiaoyao9184/spring-boot-service-gradle-plugin/master/gradle/winsw.gradle"
+    apply from: "https://raw.githubusercontent.com/theevangelista/spring-boot-service-gradle-plugin/master/gradle/winsw.gradle"
 }
 
 task serviceRepackage(type: Copy) {
